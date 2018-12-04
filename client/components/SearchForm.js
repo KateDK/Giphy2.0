@@ -1,16 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import SearchForm from './SearchForm'
 
 /**
  * COMPONENT
  */
-export const UserHome = props => {
+export const SearchForm = props => {
   return (
     <div>
-      <h3>Welcome</h3>
-      <SearchForm />
+      <h3>Form</h3>
     </div>
   )
 }
@@ -22,7 +20,7 @@ const mapState = state => {
   return {}
 }
 
-export default connect(mapState)(UserHome)
+export default connect(mapState)(SearchForm)
 
 /**
  * PROP TYPES
