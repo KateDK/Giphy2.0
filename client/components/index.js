@@ -6,3 +6,4 @@
 
 export {default as UserHome} from './user-home'
 export {default as SearchForm} from './SearchForm'
+export {default as GifDisplay} from './GifDisplay'

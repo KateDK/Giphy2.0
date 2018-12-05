@@ -1,18 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import SearchForm from './SearchForm'
-import GifDisplay from './GifDisplay'
 
 /**
  * COMPONENT
  */
-export const UserHome = props => {
+export const GifDisplay = props => {
   return (
     <div>
-      <h3>Welcome</h3>
-      <SearchForm />
-      <GifDisplay />
+      <h3>Gif List will be rendered here! YAY</h3>
     </div>
   )
 }
@@ -24,7 +20,7 @@ const mapState = state => {
   return {}
 }
 
-export default connect(mapState)(UserHome)
+export default connect(mapState)(GifDisplay)
 
 /**
  * PROP TYPES
