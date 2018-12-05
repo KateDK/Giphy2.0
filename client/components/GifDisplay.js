@@ -6,6 +6,9 @@ import {connect} from 'react-redux'
  * COMPONENT
  */
 class GifDisplay extends Component {
+  componentDidCatch() {
+    //axios call to the backend to fetch gifs
+  }
   render() {
     return (
       <div>
