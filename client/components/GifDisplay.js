@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {fetchGifs} from '../store'
+import GifCard from './GifCard'
 
 /**
  * COMPONENT
@@ -16,7 +17,9 @@ class GifDisplay extends Component {
     const {gifs} = this.props
     return (
       <div>
-        {gifs.length ? gifs.map(gif => <img src={gif.gifLink} />) : null}
+        {gifs.length
+          ? gifs.map(gif => <GifCard key={gif.gifLink} gif={gif} />)
+          : null}
       </div>
     )
   }
