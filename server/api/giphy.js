@@ -6,7 +6,12 @@ const client = GphApiClient(process.env.GIPHY_API_KEY)
 router.get('/', async (req, res, next) => {
   try {
     const gifs = await client.search('gifs', {q: 'cats'})
-    res.json(gifs.data)
+    const gifList = []
+    gifs.data.forEach(gif => {
+      const gifInfo = {gifLink: gif.embed_url, title: gif.title}
+      gifList.push(gifInfo)
+    })
+    res.json(gifList)
   } catch (err) {
     next(err)
   }
