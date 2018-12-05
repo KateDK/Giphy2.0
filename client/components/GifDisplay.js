@@ -12,12 +12,11 @@ class GifDisplay extends Component {
     await this.props.fetchGifs()
   }
   render() {
-    console.log('==>', this.props.gifs)
-    return (
-      <div>
-        <h3>Gif List will be rendered here! YAY</h3>
-      </div>
-    )
+    const {gifs} = this.props
+    if (gifs.length) {
+      console.log('==>', gifs[0].gifLink)
+    }
+    return <div>{gifs.length ? <img src={gifs[0].gifLink} /> : null}</div>
   }
 }
 

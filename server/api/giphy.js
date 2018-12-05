@@ -8,7 +8,7 @@ router.get('/', async (req, res, next) => {
     const gifs = await client.search('gifs', {q: 'cats'})
     const gifList = []
     gifs.data.forEach(gif => {
-      const gifInfo = {gifLink: gif.embed_url, title: gif.title}
+      const gifInfo = {gifLink: gif.images.original.url, title: gif.title}
       gifList.push(gifInfo)
     })
     res.json(gifList)
