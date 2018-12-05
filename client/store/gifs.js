@@ -20,7 +20,7 @@ const getGifs = gifs => ({type: GET_GIFS, gifs})
  */
 export const fetchGifs = () => async dispatch => {
   try {
-    const res = await axios.get('/giphy')
+    const res = await axios.get('/api/giphy')
     dispatch(getGifs(res.data))
   } catch (err) {
     console.error(err)
