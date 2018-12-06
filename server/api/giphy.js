@@ -44,11 +44,24 @@ router.get('/:search/gifs', async (req, res, next) => {
 
 router.get('/:search/stickers/', async (req, res, next) => {
   try {
-    const search = req.params.search
-    const gifsRes = await client.search('stickers', {
+    const search = req.params.search ? req.params.search : 'cats'
+
+    let searchReqToSend = {
       q: search,
       limit: 50
-    })
+    }
+    const rating = req.query.rating
+    const recent = req.query.recent
+    if (rating === 'true') {
+      searchReqToSend.rating = 'pg-13'
+    }
+    if (recent === 'true') {
+      searchReqToSend.sort = 'recent'
+    }
+    console.log('===>', rating)
+    console.log(searchReqToSend)
+    console.log(search)
+    const gifsRes = await client.search('stickers', searchReqToSend)
     const gifList = []
     gifsRes.data.forEach(gif => {
       const gifInfo = {gifLink: gif.images.original.url, title: gif.title}
