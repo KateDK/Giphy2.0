@@ -13,15 +13,13 @@ class GifDisplay extends Component {
   render() {
     const {gifs} = this.props
 
-    if (gifs.length) {
-      return (
-        <div className="gifDisplay">
-          {gifs.map((chunk, index) => <GifChunk gifs={chunk} key={index} />)}
-        </div>
-      )
-    } else {
-      return null
-    }
+    return (
+      <div className="gifDisplay">
+        {gifs.length
+          ? gifs.map((chunk, index) => <GifChunk gifs={chunk} key={index} />)
+          : null}
+      </div>
+    )
   }
 }
 
