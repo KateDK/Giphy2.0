@@ -18,9 +18,9 @@ const getGifs = gifs => ({type: GET_GIFS, gifs})
 /**
  * THUNK CREATORS
  */
-export const fetchGifs = () => async dispatch => {
+export const fetchGifs = search => async dispatch => {
   try {
-    const res = await axios.get('/api/giphy')
+    const res = await axios.get(`/api/giphy/:${search}`)
     dispatch(getGifs(res.data))
   } catch (err) {
     console.error(err)

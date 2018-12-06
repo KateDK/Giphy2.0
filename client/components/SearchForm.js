@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {fetchGifs} from '../store'
 
 /**
  * COMPONENT
@@ -20,20 +21,21 @@ class SearchForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    // this.props.createBuyStocks(ticker, quantity)
-    // this.setState({ticker: '', quantity: 0})
+    const {search} = this.state
+    this.props.fetchGifs(search)
+    this.setState({search: ''})
   }
   render() {
     console.log(this.state)
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="formWrapper">
             <label>Search GIFs </label>
             <input
               name="search"
               type="text"
-              placeholder="Example: YOLO"
+              placeholder="Search Example: YOLO"
               value={this.state.search}
               onChange={this.handleChange}
             />
@@ -48,8 +50,11 @@ class SearchForm extends Component {
 /**
  * CONTAINER
  */
-const mapState = state => {
-  return {}
+
+const mapDispatch = dispatch => {
+  return {
+    fetchGifs: search => dispatch(fetchGifs(search))
+  }
 }
 
-export default connect(mapState)(SearchForm)
+export default connect(null, mapDispatch)(SearchForm)

@@ -10,9 +10,10 @@ Array.prototype.chunk = function(n) {
   return [this.slice(0, n)].concat(this.slice(n).chunk(n))
 }
 
-router.get('/', async (req, res, next) => {
+router.get('/:search', async (req, res, next) => {
   try {
-    const gifsRes = await client.search('gifs', {q: 'cats', limit: 50})
+    const search = req.params.search
+    const gifsRes = await client.search('gifs', {q: search, limit: 50})
     const gifList = []
     gifsRes.data.forEach(gif => {
       const gifInfo = {gifLink: gif.images.original.url, title: gif.title}
