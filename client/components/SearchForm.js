@@ -30,28 +30,52 @@ class SearchForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div className="formWrapper">
-            <label className="SearchLable">
-              Search GIFs
-              <input
-                name="search"
-                type="text"
-                placeholder="Search Example: YOLO"
-                value={this.state.search}
-                onChange={this.handleChange}
-              />
-            </label>
+          <div className="searchFormDiv">
+            <div className="formWrapper">
+              <label className="SearchLable">
+                Search GIFs
+                <input
+                  className="searchInput"
+                  name="search"
+                  type="text"
+                  placeholder="Search Example: YOLO"
+                  value={this.state.search}
+                  onChange={this.handleChange}
+                />
+              </label>
 
-            <button type="submit">🔍</button>
-          </div>
-          <div className="checkboxes">
-            <label>Is going:</label>
-            <input
-              name="isGoing"
-              type="checkbox"
-              checked={this.state.isGoing}
-              onChange={this.handleInputChange}
-            />
+              <button type="submit">🔍</button>
+            </div>
+
+            <div className="checkboxes">
+              <label className="checkboxInput">
+                Stickers
+                <input
+                  name="isGoing"
+                  type="checkbox"
+                  checked={this.state.isGoing}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+              <label className="checkboxInput">
+                pg-13 rating
+                <input
+                  name="isGoing"
+                  type="checkbox"
+                  checked={this.state.isGoing}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+              <label className="checkboxInput">
+                Recent
+                <input
+                  name="isGoing"
+                  type="checkbox"
+                  checked={this.state.isGoing}
+                  onChange={this.handleInputChange}
+                />
+              </label>
+            </div>
           </div>
         </form>
       </div>

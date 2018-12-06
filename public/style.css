@@ -4,6 +4,11 @@ body {
   color: azure;
 }
 
+.searchFormDiv {
+  display: flex;
+  flex-direction: column;
+}
+
 .SearchLable {
   color: transparent;
 }
@@ -13,20 +18,20 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
   border-radius: 2px;
   /* padding: 1.4rem 2rem 1.6rem; */
   background: rgba(57, 63, 84, 0.8);
 }
 
-input {
+.searchInput {
   border-style: none;
   background: transparent;
   outline: none;
   padding-left: 1.4rem;
-
-  flex-grow: 1;
+  width: 100%;
+  /* flex-grow: 1; */
   /* color: #7881a1; */
   font-size: 1.5rem;
   line-height: 2.4rem;
@@ -41,6 +46,22 @@ button {
   outline: none;
   font-size: 1.8rem;
   padding: 1.4rem 2rem 1.6rem;
+}
+
+.checkboxes {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  background: rgba(57, 63, 84, 0.8);
+  border-top: 2px solid grey;
+  padding: 0.5rem 0;
+}
+
+.checkboxInput {
+  padding-left: 1.4rem;
 }
 
 .gifDisplay {
