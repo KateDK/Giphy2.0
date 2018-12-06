@@ -57,7 +57,7 @@ class SearchForm extends Component {
               </label>
 
               <button type="submit" disabled={!this.state.search}>
-                🔍
+                <i class="fas fa-search" />
               </button>
             </div>
 
