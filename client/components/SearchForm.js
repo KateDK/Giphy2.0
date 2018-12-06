@@ -27,7 +27,7 @@ class SearchForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    const {search} = this.state
+    const {search, stickers, rating, recent} = this.state
     this.props.fetchGifs(search, stickers, rating, recent)
     this.setState({
       search: '',
@@ -100,7 +100,8 @@ class SearchForm extends Component {
 
 const mapDispatch = dispatch => {
   return {
-    fetchGifs: search => dispatch(fetchGifs(search, stickers, rating, recent))
+    fetchGifs: (search, stickers, rating, recent) =>
+      dispatch(fetchGifs(search, stickers, rating, recent))
   }
 }
 

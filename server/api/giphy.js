@@ -13,10 +13,18 @@ Array.prototype.chunk = function(n) {
 router.get('/:search/gifs', async (req, res, next) => {
   try {
     const search = req.params.search
-    const gifsRes = await client.search('gifs', {
+    let searchReqToSend = {
       q: search,
       limit: 50
-    })
+    }
+    //const query = require('url').parse(req.url, true).query
+    const rating = req.query.rating
+    const recent = req.query.recent
+    if (rating === true) {
+      searchReqToSend.rating = 'pg-13'
+    }
+    console.log('===>', searchReqToSend)
+    const gifsRes = await client.search('gifs', searchReqToSend)
     const gifList = []
     gifsRes.data.forEach(gif => {
       const gifInfo = {gifLink: gif.images.original.url, title: gif.title}
@@ -29,7 +37,7 @@ router.get('/:search/gifs', async (req, res, next) => {
   }
 })
 
-router.get('/:search/stickers', async (req, res, next) => {
+router.get('/:search/stickers/', async (req, res, next) => {
   try {
     const search = req.params.search
     const gifsRes = await client.search('stickers', {
