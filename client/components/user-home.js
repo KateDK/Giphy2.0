@@ -1,12 +1,11 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import SearchForm from './SearchForm'
 import GifDisplay from './GifDisplay'
 
 /**
  * COMPONENT
  */
-export const UserHome = props => {
+export const UserHome = () => {
   return (
     <div>
       <SearchForm />
@@ -15,11 +14,4 @@ export const UserHome = props => {
   )
 }
 
-/**
- * CONTAINER
- */
-const mapState = state => {
-  return {}
-}
-
-export default connect(mapState)(UserHome)
+export default UserHome
