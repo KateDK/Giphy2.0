@@ -7,7 +7,11 @@ import {connect} from 'react-redux'
 export const SearchForm = props => {
   return (
     <div>
-      <h3>Form</h3>
+      <form>
+        <label>Search GIFs </label>
+        <input name="search" type="text" placeholder="Example: YOLO" />
+        <button type="submit">🔍</button>
+      </form>
     </div>
   )
 }
