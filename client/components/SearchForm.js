@@ -59,7 +59,7 @@ class SearchForm extends Component {
               </label>
 
               <button type="submit">
-                <i class="fas fa-search" />
+                <i className="fas fa-search" />
               </button>
             </div>
 
