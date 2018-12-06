@@ -8,7 +8,6 @@ export const GifCard = props => {
   const {gifLink, title} = props.gif
   return (
     <div className="gifCard">
-      {/* <h3>{title}</h3> */}
       <img src={gifLink} alt={title} />
     </div>
   )
