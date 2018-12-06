@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {fetchGifs} from '../store'
 import GifChunk from './GifChunk'
+import NoSearchRes from './NoSearchRes'
 
 /**
  * COMPONENT
@@ -18,18 +19,7 @@ class GifDisplay extends Component {
         {gifs.length ? (
           gifs.map((chunk, index) => <GifChunk gifs={chunk} key={index} />)
         ) : (
-          <div>
-            <h3>
-              "Most discoveries even today are a combination of serendipity and
-              of searching."
-            </h3>
-            <a
-              href="https://en.wikipedia.org/wiki/Siddhartha_Mukherjee"
-              target="_blank"
-            >
-              <p>-Siddhartha Mukherjee</p>
-            </a>
-          </div>
+          <NoSearchRes />
         )}
       </div>
     )
