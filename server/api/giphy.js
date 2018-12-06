@@ -26,9 +26,7 @@ router.get('/:search/gifs', async (req, res, next) => {
     if (recent === 'true') {
       searchReqToSend.sort = 'recent'
     }
-    console.log('===>', rating)
-    console.log(searchReqToSend)
-    console.log(search)
+
     const gifsRes = await client.search('gifs', searchReqToSend)
     const gifList = []
     gifsRes.data.forEach(gif => {
@@ -50,17 +48,17 @@ router.get('/:search/stickers/', async (req, res, next) => {
       q: search,
       limit: 50
     }
+
     const rating = req.query.rating
     const recent = req.query.recent
+
     if (rating === 'true') {
       searchReqToSend.rating = 'pg-13'
     }
     if (recent === 'true') {
       searchReqToSend.sort = 'recent'
     }
-    console.log('===>', rating)
-    console.log(searchReqToSend)
-    console.log(search)
+
     const gifsRes = await client.search('stickers', searchReqToSend)
     const gifList = []
     gifsRes.data.forEach(gif => {
