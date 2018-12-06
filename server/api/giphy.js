@@ -18,10 +18,9 @@ router.get('/:search/gifs', async (req, res, next) => {
       q: search,
       limit: 50
     }
-    //const query = require('url').parse(req.url, true).query
     const rating = req.query.rating
     const recent = req.query.recent
-    if (rating !== undefined && rating !== 'false') {
+    if (rating === 'true') {
       searchReqToSend.rating = 'pg-13'
     }
     console.log('===>', rating)
