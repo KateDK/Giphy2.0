@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: Courier New;
 }
 
 a {
@@ -28,7 +28,6 @@ form div {
 }
 
 .column {
-  /* flex: 25%; */
   max-width: 24%;
   padding: 0 4px;
 }
