@@ -9,21 +9,32 @@ class SearchForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      search: ''
+      search: '',
+      stickers: false,
+      rating: false,
+      recent: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
-    this.setState({[event.target.name]: event.target.value})
+    const target = event.target
+    this.setState({
+      [target.name]: target.type === 'checkbox' ? target.checked : target.value
+    })
   }
 
   handleSubmit(event) {
     event.preventDefault()
     const {search} = this.state
-    this.props.fetchGifs(search)
-    this.setState({search: ''})
+    this.props.fetchGifs(search, stickers, rating, recent)
+    this.setState({
+      search: '',
+      stickers: false,
+      rating: false,
+      recent: false
+    })
   }
   render() {
     console.log(this.state)
@@ -51,28 +62,28 @@ class SearchForm extends Component {
               <label className="checkboxInput">
                 Stickers
                 <input
-                  name="isGoing"
+                  name="stickers"
                   type="checkbox"
-                  checked={this.state.isGoing}
-                  onChange={this.handleInputChange}
+                  checked={this.state.stickers}
+                  onChange={this.handleChange}
                 />
               </label>
               <label className="checkboxInput">
                 pg-13 rating
                 <input
-                  name="isGoing"
+                  name="rating"
                   type="checkbox"
-                  checked={this.state.isGoing}
-                  onChange={this.handleInputChange}
+                  checked={this.state.rating}
+                  onChange={this.handleChange}
                 />
               </label>
               <label className="checkboxInput">
                 Recent
                 <input
-                  name="isGoing"
+                  name="recent"
                   type="checkbox"
-                  checked={this.state.isGoing}
-                  onChange={this.handleInputChange}
+                  checked={this.state.recent}
+                  onChange={this.handleChange}
                 />
               </label>
             </div>
@@ -89,7 +100,7 @@ class SearchForm extends Component {
 
 const mapDispatch = dispatch => {
   return {
-    fetchGifs: search => dispatch(fetchGifs(search))
+    fetchGifs: search => dispatch(fetchGifs(search, stickers, rating, recent))
   }
 }
 
