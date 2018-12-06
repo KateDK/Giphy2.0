@@ -26,9 +26,9 @@ export const fetchGifs = (
 ) => async dispatch => {
   try {
     const method = stickers ? 'stickers' : 'gifs'
-    let reqStr = `${search}/${method}/?rating=${rating}&recent=${recent}`
-
-    const res = await axios.get(`/api/giphy/${reqStr}`)
+    const res = await axios.get(`/api/giphy/${search}/${method}/`, {
+      params: {rating, recent}
+    })
     dispatch(getGifs(res.data))
   } catch (err) {
     console.error(err)

@@ -7,8 +7,8 @@ import GifChunk from './GifChunk'
  * COMPONENT
  */
 class GifDisplay extends Component {
-  async componentDidCatch() {
-    await this.props.fetchGifs()
+  async componentDidMount() {
+    await this.props.fetchGifs('cats', false, false, false)
   }
   render() {
     const {gifs} = this.props
@@ -34,7 +34,8 @@ const mapState = state => {
 
 const mapDispatch = () => dispatch => {
   return {
-    fetchGifs: dispatch(fetchGifs())
+    fetchGifs: (search, stickers, rating, recent) =>
+      dispatch(fetchGifs(search, stickers, rating, recent))
   }
 }
 

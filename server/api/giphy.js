@@ -12,7 +12,8 @@ Array.prototype.chunk = function(n) {
 
 router.get('/:search/gifs', async (req, res, next) => {
   try {
-    const search = req.params.search
+    const search = req.params.search ? req.params.search : 'cats'
+
     let searchReqToSend = {
       q: search,
       limit: 50
@@ -20,10 +21,12 @@ router.get('/:search/gifs', async (req, res, next) => {
     //const query = require('url').parse(req.url, true).query
     const rating = req.query.rating
     const recent = req.query.recent
-    if (rating) {
+    if (rating !== undefined && rating !== 'false') {
       searchReqToSend.rating = 'pg-13'
     }
-    console.log('===>', searchReqToSend)
+    console.log('===>', rating)
+    console.log(searchReqToSend)
+    console.log(search)
     const gifsRes = await client.search('gifs', searchReqToSend)
     const gifList = []
     gifsRes.data.forEach(gif => {
