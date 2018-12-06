@@ -23,6 +23,9 @@ router.get('/:search/gifs', async (req, res, next) => {
     if (rating === 'true') {
       searchReqToSend.rating = 'pg-13'
     }
+    if (recent === 'true') {
+      searchReqToSend.sort = 'recent'
+    }
     console.log('===>', rating)
     console.log(searchReqToSend)
     console.log(search)
