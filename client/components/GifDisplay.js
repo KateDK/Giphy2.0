@@ -17,7 +17,9 @@ class GifDisplay extends Component {
     return (
       <div className="gifDisplay">
         {gifs.length ? (
-          gifs.map((chunk, index) => <GifChunk gifs={chunk} key={index} />)
+          gifs.map((chunk, index) => (
+            <GifChunk gifs={chunk} key={index.toString()} />
+          ))
         ) : (
           <NoSearchRes />
         )}

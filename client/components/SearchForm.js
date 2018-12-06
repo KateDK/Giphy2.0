@@ -52,7 +52,7 @@ class SearchForm extends Component {
                   placeholder="Search Example: YOLO"
                   value={this.state.search}
                   onChange={this.handleChange}
-                  autocomplete="off"
+                  autoComplete="off"
                 />
               </label>
 
