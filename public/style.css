@@ -23,6 +23,7 @@ body {
   border-radius: 2px;
   /* padding: 1.4rem 2rem 1.6rem; */
   background: rgba(57, 63, 84, 0.8);
+  padding-bottom: 0rem;
 }
 
 .searchInput {
@@ -56,12 +57,13 @@ button {
   max-width: 450px;
   margin: auto;
   background: rgba(57, 63, 84, 0.8);
-  border-top: 2px solid grey;
+  border-top: 2px dotted rgba(57, 63, 84, 0.92);
   padding: 0.5rem 0;
+  justify-content: space-evenly;
 }
 
 .checkboxInput {
-  padding-left: 1.4rem;
+  /* padding-left: 1.4rem; */
 }
 
 .gifDisplay {
