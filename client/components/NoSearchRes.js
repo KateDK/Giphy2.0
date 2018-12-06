@@ -1,21 +1,16 @@
 import React from 'react'
+import {randomeQuote} from '../quotes'
 
 /**
  * COMPONENT
  */
 export const NoSearchRes = () => {
+  const quote = randomeQuote()
   return (
     <div>
-      <h3>
-        "Most discoveries even today are a combination of serendipity and of
-        searching."
-      </h3>
-      <a
-        href="https://en.wikipedia.org/wiki/Siddhartha_Mukherjee"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <p>-Siddhartha Mukherjee</p>
+      <h3>"{quote.quote}"</h3>
+      <a href={quote.link} target="_blank" rel="noreferrer noopener">
+        <p>-{quote.author}</p>
       </a>
     </div>
   )
