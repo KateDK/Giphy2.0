@@ -13,7 +13,10 @@ Array.prototype.chunk = function(n) {
 router.get('/:search', async (req, res, next) => {
   try {
     const search = req.params.search
-    const gifsRes = await client.search('gifs', {q: search, limit: 50})
+    const gifsRes = await client.search('gifs', {
+      q: search,
+      limit: 50
+    })
     const gifList = []
     gifsRes.data.forEach(gif => {
       const gifInfo = {gifLink: gif.images.original.url, title: gif.title}
