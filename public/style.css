@@ -3,7 +3,10 @@ body {
   background-color: black;
   color: azure;
 }
-
+a {
+  text-decoration: none;
+  color: azure;
+}
 .searchFormDiv {
   display: flex;
   flex-direction: column;

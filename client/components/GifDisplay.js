@@ -23,7 +23,12 @@ class GifDisplay extends Component {
               "Most discoveries even today are a combination of serendipity and
               of searching."
             </h3>
-            <p>-Siddhartha Mukherjee</p>
+            <a
+              href="https://en.wikipedia.org/wiki/Siddhartha_Mukherjee"
+              target="_blank"
+            >
+              <p>-Siddhartha Mukherjee</p>
+            </a>
           </div>
         )}
       </div>
