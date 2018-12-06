@@ -28,7 +28,6 @@ a {
   max-width: 450px;
   margin: 0 auto;
   border-radius: 2px;
-  /* padding: 1.4rem 2rem 1.6rem; */
   background: rgba(57, 63, 84, 0.8);
   padding-bottom: 0rem;
 }
@@ -39,8 +38,6 @@ a {
   outline: none;
   padding-left: 1.4rem;
   width: 100%;
-  /* flex-grow: 1; */
-  /* color: #7881a1; */
   font-size: 1.5rem;
   line-height: 2.4rem;
   vertical-align: middle;
@@ -51,16 +48,9 @@ button {
   padding: 0;
   background: none;
   border: none;
-  /* outline: none; */
   font-size: 1.8rem;
   padding: 1.4rem 2rem 1.6rem;
   border-left: 2px dotted rgba(57, 63, 84, 0.92);
-}
-
-:disabled {
-  /* opacity: 0.25;
-  cursor: not-allowed; */
-  visibility: hidden;
 }
 
 .checkboxes {
@@ -74,10 +64,6 @@ button {
   border-top: 2px dotted rgba(57, 63, 84, 0.92);
   padding: 0.5rem 0;
   justify-content: space-evenly;
-}
-
-.checkboxInput {
-  /* padding-left: 1.4rem; */
 }
 
 .gifDisplay {
