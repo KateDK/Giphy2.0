@@ -27,7 +27,9 @@ class SearchForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    const {search, stickers, rating, recent} = this.state
+    const {stickers, rating, recent} = this.state
+    const search = this.state.search ? this.state.search : 'cats'
+
     this.props.fetchGifs(search, stickers, rating, recent)
     this.setState({
       search: '',
@@ -56,7 +58,7 @@ class SearchForm extends Component {
                 />
               </label>
 
-              <button type="submit" disabled={!this.state.search}>
+              <button type="submit">
                 <i class="fas fa-search" />
               </button>
             </div>
