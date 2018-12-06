@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {fetchGifs} from '../store'
 import GifCard from './GifCard'
+import GifChunk from './GifChunk'
 
 /**
  * COMPONENT
@@ -13,15 +14,17 @@ class GifDisplay extends Component {
     await this.props.fetchGifs()
   }
   render() {
-    console.log('==>', this.props.gifs)
     const {gifs} = this.props
-    return (
-      <div>
-        {gifs.length
-          ? gifs.map(gif => <GifCard key={gif.gifLink} gif={gif} />)
-          : null}
-      </div>
-    )
+
+    if (gifs.length) {
+      return (
+        <div className="gifDisplay">
+          {gifs.map((chunk, index) => <GifChunk gifs={chunk} key={index} />)}
+        </div>
+      )
+    } else {
+      return null
+    }
   }
 }
 

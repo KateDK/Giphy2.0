@@ -1,20 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import GifCard from './GifCard'
 
 /**
  * COMPONENT
  */
-export const GifCard = props => {
-  const {gifLink, title} = props.gif
+export const GifChunk = props => {
   return (
-    <div className="gifCard">
-      {/* <h3>{title}</h3> */}
-      <img src={gifLink} alt={title} />
+    <div className="column">
+      {props.gifs.map(gif => <GifCard gif={gif} key={gif.title} />)}
     </div>
   )
 }
 
-export default GifCard
+export default GifChunk
 
 /**
  * PROP TYPES

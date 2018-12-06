@@ -19,3 +19,24 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+.gifDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  /* flex: 25%; */
+  max-width: 24%;
+  padding: 0 4px;
+}
+
+.gifCard {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.gifCard img {
+  width: 100%;
+}
