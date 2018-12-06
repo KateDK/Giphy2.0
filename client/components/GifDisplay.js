@@ -15,9 +15,17 @@ class GifDisplay extends Component {
 
     return (
       <div className="gifDisplay">
-        {gifs.length
-          ? gifs.map((chunk, index) => <GifChunk gifs={chunk} key={index} />)
-          : null}
+        {gifs.length ? (
+          gifs.map((chunk, index) => <GifChunk gifs={chunk} key={index} />)
+        ) : (
+          <div>
+            <h3>
+              "Most discoveries even today are a combination of serendipity and
+              of searching."
+            </h3>
+            <p>-Siddhartha Mukherjee</p>
+          </div>
+        )}
       </div>
     )
   }
