@@ -13,6 +13,7 @@ export const NoSearchRes = () => {
       <a
         href="https://en.wikipedia.org/wiki/Siddhartha_Mukherjee"
         target="_blank"
+        rel="noreferrer noopener"
       >
         <p>-Siddhartha Mukherjee</p>
       </a>
