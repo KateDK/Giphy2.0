@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import GifCard from './GifCard'
 
 /**
@@ -14,10 +13,3 @@ export const GifChunk = props => {
 }
 
 export default GifChunk
-
-/**
- * PROP TYPES
- */
-// UserHome.propTypes = {
-//   email: PropTypes.string
-// }

@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {fetchGifs} from '../store'
-import GifCard from './GifCard'
 import GifChunk from './GifChunk'
 
 /**
@@ -10,7 +8,6 @@ import GifChunk from './GifChunk'
  */
 class GifDisplay extends Component {
   async componentDidCatch() {
-    //axios call to the backend to fetch gifs
     await this.props.fetchGifs()
   }
   render() {
@@ -44,10 +41,3 @@ const mapDispatch = () => dispatch => {
 }
 
 export default connect(mapState, mapDispatch)(GifDisplay)
-
-/**
- * PROP TYPES
- */
-// UserHome.propTypes = {
-//   email: PropTypes.string
-// }

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 /**
  * COMPONENT
@@ -14,10 +13,3 @@ export const GifCard = props => {
 }
 
 export default GifCard
-
-/**
- * PROP TYPES
- */
-// UserHome.propTypes = {
-//   email: PropTypes.string
-// }
