@@ -5,12 +5,12 @@ import {randomeQuote} from '../quotes'
  * COMPONENT
  */
 export const NoSearchRes = () => {
-  const quote = randomeQuote()
+  const {quote, link, author} = randomeQuote()
   return (
     <div>
-      <h3>"{quote.quote}"</h3>
-      <a href={quote.link} target="_blank" rel="noreferrer noopener">
-        <p>-{quote.author}</p>
+      <h3>"{quote}"</h3>
+      <a href={link} target="_blank" rel="noreferrer noopener">
+        <p>-{author}</p>
       </a>
     </div>
   )
