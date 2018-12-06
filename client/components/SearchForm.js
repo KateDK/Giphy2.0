@@ -31,15 +31,27 @@ class SearchForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div className="formWrapper">
-            <label>Search GIFs </label>
-            <input
-              name="search"
-              type="text"
-              placeholder="Search Example: YOLO"
-              value={this.state.search}
-              onChange={this.handleChange}
-            />
+            <label className="SearchLable">
+              Search GIFs
+              <input
+                name="search"
+                type="text"
+                placeholder="Search Example: YOLO"
+                value={this.state.search}
+                onChange={this.handleChange}
+              />
+            </label>
+
             <button type="submit">🔍</button>
+          </div>
+          <div className="checkboxes">
+            <label>Is going:</label>
+            <input
+              name="isGoing"
+              type="checkbox"
+              checked={this.state.isGoing}
+              onChange={this.handleInputChange}
+            />
           </div>
         </form>
       </div>

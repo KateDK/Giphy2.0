@@ -4,8 +4,8 @@ body {
   color: azure;
 }
 
-label {
-  display: none;
+.SearchLable {
+  color: transparent;
 }
 
 .formWrapper {
