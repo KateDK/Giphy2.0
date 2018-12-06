@@ -55,7 +55,9 @@ class SearchForm extends Component {
                 />
               </label>
 
-              <button type="submit">🔍</button>
+              <button type="submit" disabled={!this.state.search}>
+                🔍
+              </button>
             </div>
 
             <div className="checkboxes">

@@ -44,9 +44,15 @@ button {
   padding: 0;
   background: none;
   border: none;
-  outline: none;
+  /* outline: none; */
   font-size: 1.8rem;
   padding: 1.4rem 2rem 1.6rem;
+  border-left: 2px dotted rgba(57, 63, 84, 0.92);
+}
+
+:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .checkboxes {
