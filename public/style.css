@@ -4,18 +4,11 @@ body {
   color: azure;
 }
 
-a {
-  text-decoration: none;
-}
-
 label {
-  display: block;
+  display: none;
 }
 
-form div {
-  margin: 1em;
-  /* display: inline-block; */
-
+.formWrapper {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -23,40 +16,29 @@ form div {
   max-width: 400px;
   margin: 0 auto;
   border-radius: 2px;
-  padding: 1.4rem 2rem 1.6rem;
+  /* padding: 1.4rem 2rem 1.6rem; */
   background: rgba(57, 63, 84, 0.8);
-  /* &:after {
-    content: "";
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 999;
-    height: 2px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    background-position: 0% 0%;
-    background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
-    background-size: 500% auto;
-    animation: gradient 3s linear infinite;
-  } */
 }
+
 input {
   border-style: none;
   background: transparent;
   outline: none;
-
+  padding-left: 1.4rem;
   flex-grow: 1;
   color: #7881a1;
   font-size: 1.8rem;
   line-height: 2.4rem;
   vertical-align: middle;
 }
+
 button {
   padding: 0;
   background: none;
   border: none;
   outline: none;
+  font-size: 1.8rem;
+  padding: 1.4rem 2rem 1.6rem;
 }
 
 .gifDisplay {

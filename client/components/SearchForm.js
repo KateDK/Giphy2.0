@@ -8,9 +8,11 @@ export const SearchForm = props => {
   return (
     <div>
       <form>
-        <label>Search GIFs </label>
-        <input name="search" type="text" placeholder="Example: YOLO" />
-        <button type="submit">🔍</button>
+        <div className="formWrapper">
+          <label>Search GIFs </label>
+          <input name="search" type="text" placeholder="Example: YOLO" />
+          <button type="submit">🔍</button>
+        </div>
       </form>
     </div>
   )

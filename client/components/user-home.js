@@ -9,7 +9,6 @@ import GifDisplay from './GifDisplay'
 export const UserHome = props => {
   return (
     <div>
-      <h3>Welcome</h3>
       <SearchForm />
       <GifDisplay />
     </div>
