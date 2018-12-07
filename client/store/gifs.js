@@ -1,19 +1,19 @@
-import axios from 'axios'
+import axios from 'axios';
 
 /**
  * ACTION TYPES
  */
-const GET_GIFS = 'GET_GIFS'
+const GET_GIFS = 'GET_GIFS';
 
 /**
  * INITIAL STATE
  */
-const defaultGifs = []
+const defaultGifs = [];
 
 /**
  * ACTION CREATORS
  */
-const getGifs = gifs => ({type: GET_GIFS, gifs})
+const getGifs = gifs => ({type: GET_GIFS, gifs});
 
 /**
  * THUNK CREATORS
@@ -25,15 +25,15 @@ export const fetchGifs = (
   recent
 ) => async dispatch => {
   try {
-    const method = stickers ? 'stickers' : 'gifs'
-    const res = await axios.get(`/api/giphy/${search}/${method}/`, {
-      params: {rating, recent}
-    })
-    dispatch(getGifs(res.data))
+    const method = stickers ? 'stickers' : 'gifs';
+    const res = await axios.get(`/api/giphy/${method}/`, {
+      params: {rating, recent, search}
+    });
+    dispatch(getGifs(res.data));
   } catch (err) {
-    console.error(err)
+    console.error(err);
   }
-}
+};
 
 /**
  * REDUCER
@@ -41,8 +41,8 @@ export const fetchGifs = (
 export default function(state = defaultGifs, action) {
   switch (action.type) {
     case GET_GIFS:
-      return action.gifs
+      return action.gifs;
     default:
-      return state
+      return state;
   }
 }
