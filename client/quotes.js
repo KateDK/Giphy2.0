@@ -64,7 +64,7 @@ const arrayOfQuotes = [
     author: 'Dorothy Parker',
     link: 'https://en.wikipedia.org/wiki/Dorothy_Parker'
   }
-]
+];
 
 export const randomeQuote = () =>
-  arrayOfQuotes[Math.floor(Math.random() * arrayOfQuotes.length)]
+  arrayOfQuotes[Math.floor(Math.random() * arrayOfQuotes.length)];

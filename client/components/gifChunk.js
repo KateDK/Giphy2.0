@@ -1,5 +1,5 @@
-import React from 'react'
-import GifCard from './GifCard'
+import React from 'react';
+import GifCard from './GifCard';
 
 /**
  * COMPONENT
@@ -9,7 +9,7 @@ export const GifChunk = props => {
     <div className="column">
       {props.gifs.map(gif => <GifCard gif={gif} key={gif.gifLink} />)}
     </div>
-  )
-}
+  );
+};
 
-export default GifChunk
+export default GifChunk;

@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 /**
  * COMPONENT
  */
 export const GifCard = props => {
-  const {gifLink, title} = props.gif
+  const {gifLink, title} = props.gif;
   return (
     <div className="gifCard">
       <img src={gifLink} alt={title} />
     </div>
-  )
-}
+  );
+};
 
-export default GifCard
+export default GifCard;

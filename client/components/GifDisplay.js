@@ -1,18 +1,18 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {fetchGifs} from '../store'
-import GifChunk from './GifChunk'
-import NoSearchRes from './NoSearchRes'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchGifs} from '../store';
+import GifChunk from './GifChunk';
+import NoSearchRes from './NoSearchRes';
 
 /**
  * COMPONENT
  */
 class GifDisplay extends Component {
   async componentDidMount() {
-    await this.props.fetchGifs('cats', false, false, false)
+    await this.props.fetchGifs('cats', false, false, false);
   }
   render() {
-    const {gifs} = this.props
+    const {gifs} = this.props;
 
     return (
       <div className="gifDisplay">
@@ -24,7 +24,7 @@ class GifDisplay extends Component {
           <NoSearchRes />
         )}
       </div>
-    )
+    );
   }
 }
 
@@ -34,14 +34,14 @@ class GifDisplay extends Component {
 const mapState = state => {
   return {
     gifs: state.gifs
-  }
-}
+  };
+};
 
 const mapDispatch = () => dispatch => {
   return {
     fetchGifs: (search, stickers, rating, recent) =>
       dispatch(fetchGifs(search, stickers, rating, recent))
-  }
-}
+  };
+};
 
-export default connect(mapState, mapDispatch)(GifDisplay)
+export default connect(mapState, mapDispatch)(GifDisplay);

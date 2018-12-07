@@ -4,9 +4,9 @@
  * having to figure out which file they belong to!
  */
 
-export {default as UserHome} from './user-home'
-export {default as SearchForm} from './SearchForm'
-export {default as GifDisplay} from './GifDisplay'
-export {default as GifCard} from './GifCard'
-export {default as GifChunk} from './GifChunk'
-export {default as NoSearchRes} from './NoSearchRes'
+export {default as UserHome} from './user-home';
+export {default as SearchForm} from './SearchForm';
+export {default as GifDisplay} from './GifDisplay';
+export {default as GifCard} from './GifCard';
+export {default as GifChunk} from './GifChunk';
+export {default as NoSearchRes} from './NoSearchRes';

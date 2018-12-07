@@ -1,42 +1,42 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {fetchGifs} from '../store'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchGifs} from '../store';
 
 /**
  * COMPONENT
  */
 class SearchForm extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       search: '',
       stickers: false,
       rating: false,
       recent: false
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    const target = event.target
+    const target = event.target;
     this.setState({
       [target.name]: target.type === 'checkbox' ? target.checked : target.value
-    })
+    });
   }
 
   handleSubmit(event) {
-    event.preventDefault()
-    const {stickers, rating, recent} = this.state
-    const search = this.state.search ? this.state.search : 'cats'
+    event.preventDefault();
+    const {stickers, rating, recent} = this.state;
+    const search = this.state.search ? this.state.search : 'cats';
 
-    this.props.fetchGifs(search, stickers, rating, recent)
+    this.props.fetchGifs(search, stickers, rating, recent);
     this.setState({
       search: '',
       stickers: false,
       rating: false,
       recent: false
-    })
+    });
   }
   render() {
     return (
@@ -94,7 +94,7 @@ class SearchForm extends Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 
@@ -106,7 +106,7 @@ const mapDispatch = dispatch => {
   return {
     fetchGifs: (search, stickers, rating, recent) =>
       dispatch(fetchGifs(search, stickers, rating, recent))
-  }
-}
+  };
+};
 
-export default connect(null, mapDispatch)(SearchForm)
+export default connect(null, mapDispatch)(SearchForm);
