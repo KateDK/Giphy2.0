@@ -1,6 +1,6 @@
 # GIPHY search
 
-This app makes use of the [GIPHY Core SDK ](https://github.com/Giphy/giphy-js-sdk-core) that is a wrapper around the[GIPHI API](https://developers.giphy.com/docs/#technical-documentation)
+This app makes use of the [GIPHY Core SDK ](https://github.com/Giphy/giphy-js-sdk-core) that is a wrapper around the [GIPHI API](https://developers.giphy.com/docs/#technical-documentation)
 
 #### App was built with:
 Node, Express, React, Redux, React-Redux
