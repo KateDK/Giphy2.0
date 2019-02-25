@@ -9,7 +9,7 @@ export const UserHome = () => {
   return (
     <div>
       <SearchForm />
-      <GifDisplay />
+      <GifDisplay className="display" />
     </div>
   );
 };
