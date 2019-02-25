@@ -3,13 +3,6 @@ module.exports = router;
 const GphApiClient = require('giphy-js-sdk-core');
 const client = GphApiClient(process.env.GIPHY_API_KEY);
 
-// Array.prototype.chunk = function(n) {
-//   if (!this.length) {
-//     return [];
-//   }
-//   return [this.slice(0, n)].concat(this.slice(n).chunk(n));
-// };
-
 router.get('/:method', async (req, res, next) => {
   try {
     const search = req.query.search;
@@ -33,7 +26,6 @@ router.get('/:method', async (req, res, next) => {
       const gifInfo = {gifLink: gif.images.original.url, title: gif.title};
       gifList.push(gifInfo);
     });
-    //const gifs = gifList.chunk(Math.ceil(gifList.length / 4));
     res.json(gifList);
   } catch (err) {
     next(err);
