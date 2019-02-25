@@ -71,7 +71,7 @@ button:focus {
   border-radius: 0px 0px 2px 2px;
 }
 
-.gifDisplay {
+/* .gifDisplay {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -91,4 +91,4 @@ button:focus {
 
 .gifCard img {
   width: 100%;
-}
+} */
