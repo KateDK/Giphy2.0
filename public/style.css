@@ -73,30 +73,7 @@ button:focus {
   border-radius: 0px 0px 2px 2px;
 }
 
-/* .gifDisplay {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0 4px;
-  justify-content: center;
-}
-
-.column {
-  max-width: 24%;
-  padding: 0 4px;
-}
-
-.gifCard {
-  margin-top: 8px;
-  vertical-align: middle;
-}
-
-.gifCard img {
-  width: 100%;
-} */
-
 .gifDisplay {
-  /* margin-top: 10px; */
   line-height: 30px;
 
   -webkit-column-count: 4;
@@ -116,6 +93,7 @@ button:focus {
     column-gap: 10px;
   }
 }
+
 @media (max-width: 800px) {
   .gifDisplay {
     -moz-column-count: 2;
@@ -125,6 +103,7 @@ button:focus {
     column-gap: 10px;
   }
 }
+
 @media (max-width: 400px) {
   .gifDisplay {
     -moz-column-count: 1;
