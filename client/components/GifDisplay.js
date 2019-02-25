@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchGifs} from '../store';
-import GifChunk from './GifChunk';
+//import GifChunk from './GifChunk';
+import GifCard from './GifCard';
 import NoSearchRes from './NoSearchRes';
 
 /**
@@ -13,13 +14,10 @@ class GifDisplay extends Component {
   }
   render() {
     const {gifs} = this.props;
-
     return (
       <div className="gifDisplay">
         {gifs.length ? (
-          gifs.map((chunk, index) => (
-            <GifChunk gifs={chunk} key={index.toString()} />
-          ))
+          gifs.map(gif => <GifCard gif={gif} key={`${gif.gifLink}`} />)
         ) : (
           <NoSearchRes />
         )}
