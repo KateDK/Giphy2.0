@@ -92,3 +92,20 @@ button:focus {
 .gifCard img {
   width: 100%;
 } */
+
+.gifDisplay {
+  /* Prevent vertical gaps */
+  line-height: 30px;
+
+  -webkit-column-count: 4;
+  -webkit-column-gap: 10px;
+  -moz-column-count: 4;
+  -moz-column-gap: 10px;
+  column-count: 4;
+  column-gap: 10px;
+}
+
+.gifCard img {
+  width: 100%;
+  height: auto;
+}
