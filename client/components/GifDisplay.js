@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchGifs} from '../store';
-//import GifChunk from './GifChunk';
 import GifCard from './GifCard';
 import NoSearchRes from './NoSearchRes';
 
