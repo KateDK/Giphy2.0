@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
+import _ from 'lodash';
+import debounce from 'lodash/debounce';
 import {connect} from 'react-redux';
 import {fetchGifs} from '../store';
+
+const debounceFunk = debounce;
 
 /**
  * COMPONENT
@@ -15,18 +19,23 @@ class SearchForm extends Component {
       recent: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.fetchGifsDebounced = debounceFunk(props.fetchGifs, 300);
     //this.handleSubmit = this.handleSubmit.bind(this);
+    // this.debounceFunk = (callback, args) => {
+    //   _.debounce(callback(...args), 300);
+    // };
   }
 
   handleChange(event) {
+    // event.persist();
     const target = event.target;
-    const search = this.state.search ? this.state.search : 'cats';
-    const {stickers, rating, recent} = this.state;
+    //const fetchGifsFunk = this.props.fetchGifs;
     this.setState({
       [target.name]: target.type === 'checkbox' ? target.checked : target.value
     });
-
-    this.props.fetchGifs(search, stickers, rating, recent);
+    const search = this.state.search ? this.state.search : 'cats';
+    const {stickers, rating, recent} = this.state;
+    this.fetchGifsDebounced(search, stickers, rating, recent);
   }
 
   // handleSubmit(event) {
