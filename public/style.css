@@ -46,7 +46,7 @@ a {
   color: grey;
 }
 
-button {
+.lookingGlass {
   padding: 0;
   background: none;
   border: none;
@@ -55,9 +55,9 @@ button {
   border-left: 2px dotted rgba(57, 63, 84, 0.92);
 }
 
-button:focus {
+/* button:focus {
   outline: 0;
-}
+} */
 
 .checkboxes {
   position: relative;

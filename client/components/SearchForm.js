@@ -57,9 +57,9 @@ class SearchForm extends Component {
                 />
               </label>
 
-              <button type="submit">
+              <div className="lookingGlass">
                 <i className="fas fa-search" />
-              </button>
+              </div>
             </div>
 
             <div className="checkboxes">
