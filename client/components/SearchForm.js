@@ -15,33 +15,37 @@ class SearchForm extends Component {
       recent: false
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     const target = event.target;
+    const search = this.state.search ? this.state.search : 'cats';
+    const {stickers, rating, recent} = this.state;
     this.setState({
       [target.name]: target.type === 'checkbox' ? target.checked : target.value
     });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const {stickers, rating, recent} = this.state;
-    const search = this.state.search ? this.state.search : 'cats';
 
     this.props.fetchGifs(search, stickers, rating, recent);
-    this.setState({
-      search: '',
-      stickers: false,
-      rating: false,
-      recent: false
-    });
   }
+
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   const {stickers, rating, recent} = this.state;
+  //   const search = this.state.search ? this.state.search : 'cats';
+
+  //   this.props.fetchGifs(search, stickers, rating, recent);
+  //   this.setState({
+  //     search: '',
+  //     stickers: false,
+  //     rating: false,
+  //     recent: false
+  //   });
+  // }
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <div className="searchFormDiv">
             <div className="formWrapper">
               <label className="SearchLable">
